@@ -16,5 +16,8 @@ int solution(int A, int B, int K) {
     }
     for (i = A; (i % K) != 0; i++) {
     }
+    if (i > B) {
+        return 0;
+    }
     return ((B - i) / K) + 1;
-}
+    }
