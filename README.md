@@ -1,6 +1,6 @@
 Codility
 =============================================
-This is solutions of exercises on
+C++ solutions for
 https://codility.com
 
 
