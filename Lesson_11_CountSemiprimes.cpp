@@ -7,7 +7,7 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
         prime.push_back(1);
         s_prime.push_back(0);
     }
-    //finding primes numbers 
+    //finding primes numbers
     prime[0] = prime[1] = 0;
     while (i * i <= N) {
         if (prime[i]) {
@@ -36,14 +36,18 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
         }
     }
     //count semiprimes in range
-    for (int i = 0; i < (int)P.size(); i++) {
-        z = 0;
-        for (int j = P[i]; j <= Q[i]; j++) {
-            if (s_prime[j]) {
-                z++;
-            }
+    z = 0;
+    for (int i = 0; i < (int)s_prime.size(); i++) {
+        if (s_prime[i] == 1) {
+            z++;
         }
+        s_prime[i] = z;
+    }
+    for (int i = 0; i < (int)P.size(); i++) {
+        z = s_prime[Q[i]] - s_prime[P[i] - 1] ;
         output.push_back(z);
     }
     return output;
 }
+
+
